@@ -17,8 +17,13 @@ can user clean url
 if you -v run dockerfile   
 you can user 1.sh
 
-cd /  
-bash 1.sh --drupal_path=/usr/share/nginx/www --drupal_user=root
+cd ~/sh/  
+bash 1.sh --drupal_path=/usr/share/nginx/www --drupal_user=root  
+or go to /usr/share/nginx/www/  
+carried out  
+~/sh/bs.sh
+
+
 
 
 SSH Key

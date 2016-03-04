@@ -30,6 +30,7 @@ RUN  apt-get install php5-curl -y
 RUN apt-get install nano wget git vim openssh-server supervisor -y
 RUN  mkdir -p /usr/share/nginx/www
 RUN mkdir -p /var/log/supervisor
+RUN mkdir -p /root/sh/
 
 
 # Setup SSH
@@ -39,7 +40,7 @@ RUN echo 'PasswordAuthentication no' >> /etc/ssh/sshd_config
 RUN mkdir /var/run/sshd && chmod 0755 /var/run/sshd
 RUN mkdir -p /root/.ssh/
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
-ADD develop_server.key.pub  /root/.ssh/authorized_keys
+# ADD develop_server.key.pub  /root/.ssh/authorized_keys
 
 
 
@@ -68,6 +69,8 @@ ADD  www.conf  /etc/php5/fpm/pool.d/www.conf
 ADD  php.ini    /etc/php5/fpm/php.ini
 ADD  default   /etc/nginx/sites-available/default
 ADD  my.cnf    /etc/mysql/my.cnf
-ADD  1.sh      /
+ADD  ./sh/1.sh  /root/sh/
+ADD  ./sh/bs.sh /root/sh/bs.sh
+
 
 CMD ["/usr/bin/supervisord"]
