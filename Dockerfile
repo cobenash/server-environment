@@ -70,7 +70,7 @@ ADD  php.ini    /etc/php5/fpm/php.ini
 ADD  default   /etc/nginx/sites-available/default
 ADD  my.cnf    /etc/mysql/my.cnf
 ADD  ./sh/1.sh  /root/sh/
-ADD  ./sh/bs.sh /root/sh/bs.sh
+ADD  ./sh/bs.sh /bin/
 
 
 CMD ["/usr/bin/supervisord"]

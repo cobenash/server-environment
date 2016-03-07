@@ -21,8 +21,8 @@ cd ~/sh/
 bash 1.sh --drupal_path=/usr/share/nginx/www --drupal_user=root  
 
 or go to /usr/share/nginx/www/  
-carried out  
-~/sh/bs.sh
+carried   
+"bs.sh"
 
 
 
