@@ -40,7 +40,7 @@ RUN echo 'PasswordAuthentication no' >> /etc/ssh/sshd_config
 RUN mkdir /var/run/sshd && chmod 0755 /var/run/sshd
 RUN mkdir -p /root/.ssh/
 RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
-ADD develop_server.key.pub  /root/.ssh/authorized_keys
+#ADD develop_server.key.pub  /root/.ssh/authorized_keys
 
 
 
@@ -71,6 +71,6 @@ ADD  default   /etc/nginx/sites-available/default
 ADD  my.cnf    /etc/mysql/my.cnf
 ADD  ./sh/1.sh  /root/sh/
 ADD  ./sh/bs.sh /bin/
-
+ADD  nginx.conf /etc/nginx/
 
 CMD ["/usr/bin/supervisord"]
