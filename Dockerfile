@@ -26,7 +26,6 @@ RUN  apt-get install php5-mysql -y
 RUN  apt-get install php5-gd -y
 RUN  apt-get install php5-cli -y
 RUN  apt-get install php5-curl -y
-RUN  apt-get install php5-zip -y
 RUN  apt-get install php5-dev php-pear make -y
 RUN  sudo pecl install memcache-3.0.8
 RUN  apt-get update
