@@ -26,6 +26,8 @@ RUN  apt-get install php5-mysql -y
 RUN  apt-get install php5-gd -y
 RUN  apt-get install php5-cli -y
 RUN  apt-get install php5-curl -y
+RUN  apt-get install php5.6-zip -y
+RUN  apt-get install php5.6-memcache -y
 
 RUN apt-get install nano wget git vim openssh-server supervisor -y
 RUN  mkdir -p /usr/share/nginx/www
