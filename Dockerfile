@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 
-MAINTAINER victor.yang@hellosanta.com.t
+MAINTAINER victor.yang@hellosanta.com.tw
 
 RUN apt-get update
 RUN apt-get upgrade -y
