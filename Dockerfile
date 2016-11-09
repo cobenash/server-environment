@@ -33,6 +33,7 @@ RUN  apt-get install php5.6-mbstring -y
 RUN  apt-get install php5.6-memcache
 RUN  apt-get update
 RUN  apt-get upgrade -y
+RUN  service php5.6-fpm start
 
 RUN apt-get install nano wget git vim openssh-server supervisor -y
 RUN  mkdir -p /usr/share/nginx/www
