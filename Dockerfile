@@ -5,7 +5,7 @@ MAINTAINER victor.yang@hellosanta.com.t
 RUN apt-get update
 RUN apt-get upgrade -y
 
-# nginx 1.8.1 php5.6
+# nginx 1.10.1 php5.6
 
 RUN  apt-get install software-properties-common python-software-properties  -y
 RUN  apt-get install python-software-properties
@@ -21,13 +21,16 @@ RUN  add-apt-repository ppa:ondrej/php
 RUN  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys  4F4EA0AAE5267A6C
 RUN  apt-get update
 RUN  apt-get upgrade -y
-RUN  apt-get install php-fpm -y
-RUN  apt-get install php-mysql -y
-RUN  apt-get install php-gd -y
-RUN  apt-get install php-cli -y
-RUN  apt-get install php-curl -y
-RUN  apt-get install php-dev -y
-RUN  apt-get install php-memcache
+RUN  apt-get install php5.6-fpm -y
+RUN  apt-get install php5.6-mysql -y
+RUN  apt-get install php5.6-gd -y
+RUN  apt-get install php5.6-cli -y
+RUN  apt-get install php5.6-curl -y
+RUN  apt-get install php5.6-xml -y
+RUN  apt-get install php5.6-dev -y
+RUN  apt-get install php5.6-zip -y
+RUN  apt-get install php5.6-mbstring -y
+RUN  apt-get install php5.6-memcache
 RUN  apt-get update
 RUN  apt-get upgrade -y
 
