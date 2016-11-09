@@ -17,17 +17,17 @@ RUN  apt-get install software-properties-common
 RUN  locale-gen en_US.UTF-8
 RUN  export LANG=en_US.UTF-8
 RUN  export LANG=C.UTF-8
-RUN  add-apt-repository ppa:ondrej/php5-5.6
+RUN  add-apt-repository ppa:ondrej/php
 RUN  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys  4F4EA0AAE5267A6C
 RUN  apt-get update
 RUN  apt-get upgrade -y
-RUN  apt-get install php5-fpm -y
-RUN  apt-get install php5-mysql -y
-RUN  apt-get install php5-gd -y
-RUN  apt-get install php5-cli -y
-RUN  apt-get install php5-curl -y
-RUN  apt-get install php5-dev php-pear make -y
-RUN  sudo pecl install memcache-3.0.8
+RUN  apt-get install php-fpm -y
+RUN  apt-get install php-mysql -y
+RUN  apt-get install php-gd -y
+RUN  apt-get install php-cli -y
+RUN  apt-get install php-curl -y
+RUN  apt-get install php-dev -y
+RUN  apt-get install php-memcache
 RUN  apt-get update
 RUN  apt-get upgrade -y
 
@@ -47,12 +47,11 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 ADD develop_server.key.pub  /root/.ssh/authorized_keys
 
 
-
 # drush
-RUN wget http://files.drush.org/drush.phar
-RUN php drush.phar core-status
-RUN chmod +x drush.phar
-RUN sudo mv drush.phar /usr/local/bin/drush
+RUN php -r "readfile('https://s3.amazonaws.com/files.drush.org/drush.phar');" > drush
+RUN php drush core-status
+RUN chmod +x drush
+RUN sudo mv drush /usr/local/bin
 RUN drush init -y
 
 
@@ -69,8 +68,8 @@ EXPOSE 80 22
 
 #啟動檔設定檔
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-ADD  www.conf  /etc/php5/fpm/pool.d/www.conf
-ADD  php.ini    /etc/php5/fpm/php.ini
+ADD  www.conf  /etc/php/5.6/fpm/pool.d/www.conf
+ADD  php.ini    /etc/php/5.6/fpm/php.ini
 ADD  default   /etc/nginx/sites-available/default
 ADD  my.cnf    /etc/mysql/my.cnf
 ADD  ./sh/1.sh  /root/sh/
