@@ -71,7 +71,7 @@ RUN drush init -y
 EXPOSE 80 22
 
 #啟動檔設定檔
-ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+ADD  supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD  www.conf  /etc/php/7.0/fpm/pool.d/www.conf
 ADD  php.ini    /etc/php/7.0/fpm/php.ini
 ADD  default   /etc/nginx/sites-available/default
