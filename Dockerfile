@@ -58,6 +58,8 @@ RUN chmod +x drush
 RUN sudo mv drush /usr/local/bin
 RUN drush init -y
 
+# workdir
+WORKDIR /usr/share/nginx/www
 
 
 # mysql
