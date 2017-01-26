@@ -55,7 +55,7 @@ ADD develop_server.key.pub  /root/.ssh/authorized_keys
 RUN php -r "readfile('https://s3.amazonaws.com/files.drush.org/drush.phar');" > drush
 RUN php drush core-status
 RUN chmod +x drush
-RUN sudo mv drush /usr/local/bin
+RUN mv drush /usr/local/bin
 RUN drush init -y
 
 # workdir
