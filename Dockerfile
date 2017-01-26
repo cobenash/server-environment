@@ -26,7 +26,7 @@ RUN  apt-get install php7.0-mysql -y
 RUN  apt-get install php7.0-gd -y
 RUN  apt-get install php7.0-cli -y
 RUN  apt-get install php7.0-curl -y
-RUN  apt-get install php-xml -y
+RUN  apt-get install php7.0-xml -y
 RUN  apt-get install php7.0-dev -y
 RUN  apt-get install php7.0-zip -y
 RUN  apt-get install php7.0-mbstring -y
