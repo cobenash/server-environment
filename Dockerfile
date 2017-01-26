@@ -18,7 +18,7 @@ RUN  locale-gen en_US.UTF-8
 RUN  export LANG=en_US.UTF-8
 RUN  export LANG=C.UTF-8
 RUN  add-apt-repository ppa:ondrej/php
-RUN  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys  4F4EA0AAE5267A6C
+RUN  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys  4F4EA0AAE5267A6C
 RUN  apt-get update
 RUN  apt-get upgrade -y
 RUN  apt-get install php7.0-fpm -y
