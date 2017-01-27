@@ -5,7 +5,7 @@ MAINTAINER victor.yang@hellosanta.com.tw
 RUN apt-get update
 RUN apt-get upgrade -y
 
-# nginx 1.10.1 php7.1
+# nginx 1.10.2 php5.6
 
 RUN  apt-get install software-properties-common python-software-properties  -y
 RUN  apt-get install python-software-properties
@@ -21,19 +21,19 @@ RUN  add-apt-repository ppa:ondrej/php
 RUN  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys  4F4EA0AAE5267A6C
 RUN  apt-get update
 RUN  apt-get upgrade -y
-RUN  apt-get install php7.1-fpm -y
-RUN  apt-get install php7.1-mysql -y
-RUN  apt-get install php7.1-gd -y
-RUN  apt-get install php7.1-cli -y
-RUN  apt-get install php7.1-curl -y
-RUN  apt-get install php7.1-xml -y
-RUN  apt-get install php7.1-dev -y
-RUN  apt-get install php7.1-zip -y
-RUN  apt-get install php7.1-mbstring -y
-RUN  apt-get install php7.1-memcache
+RUN  apt-get install php5.6-fpm -y
+RUN  apt-get install php5.6-mysql -y
+RUN  apt-get install php5.6-gd -y
+RUN  apt-get install php5.6-cli -y
+RUN  apt-get install php5.6-curl -y
+RUN  apt-get install php5.6-xml -y
+RUN  apt-get install php5.6-dev -y
+RUN  apt-get install php5.6-zip -y
+RUN  apt-get install php5.6-mbstring -y
+RUN  apt-get install php5.6-memcache
 RUN  apt-get update
 RUN  apt-get upgrade -y
-RUN  service php7.1-fpm start
+RUN  service php5.6-fpm start
 
 RUN apt-get install nano wget git vim openssh-server supervisor -y
 RUN  mkdir -p /usr/share/nginx/www
@@ -74,8 +74,8 @@ EXPOSE 80 22
 
 #啟動檔設定檔
 ADD  supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-ADD  www.conf  /etc/php/7.1/fpm/pool.d/www.conf
-ADD  php.ini    /etc/php/7.1/fpm/php.ini
+ADD  www.conf  /etc/php/5.6/fpm/pool.d/www.conf
+ADD  php.ini    /etc/php/5.6/fpm/php.ini
 ADD  default   /etc/nginx/sites-available/default
 ADD  my.cnf    /etc/mysql/my.cnf
 ADD  nginx.conf /etc/nginx/
