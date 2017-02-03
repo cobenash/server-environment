@@ -5,7 +5,7 @@ MAINTAINER victor.yang@hellosanta.com.tw
 RUN apt-get update
 RUN apt-get upgrade -y
 
-# nginx 1.10.1 php7.1
+# nginx 1.10.2 php7.0
 
 RUN  apt-get install software-properties-common python-software-properties  -y
 RUN  apt-get install python-software-properties
@@ -21,16 +21,16 @@ RUN  add-apt-repository ppa:ondrej/php
 RUN  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys  4F4EA0AAE5267A6C
 RUN  apt-get update
 RUN  apt-get upgrade -y
-RUN  apt-get install php7.1-fpm -y
-RUN  apt-get install php7.1-mysql -y
-RUN  apt-get install php7.1-gd -y
-RUN  apt-get install php7.1-cli -y
-RUN  apt-get install php7.1-curl -y
-RUN  apt-get install php7.1-xml -y
-RUN  apt-get install php7.1-dev -y
-RUN  apt-get install php7.1-zip -y
-RUN  apt-get install php7.1-mbstring -y
-RUN  apt-get install php7.1-memcache
+RUN  apt-get install php7.0-fpm -y
+RUN  apt-get install php7.0-mysql -y
+RUN  apt-get install php7.0-gd -y
+RUN  apt-get install php7.0-cli -y
+RUN  apt-get install php7.0-curl -y
+RUN  apt-get install php7.0-xml -y
+RUN  apt-get install php7.0-dev -y
+RUN  apt-get install php7.0-zip -y
+RUN  apt-get install php7.0-mbstring -y
+RUN  apt-get install php7.0-memcache
 RUN  apt-get update
 RUN  apt-get upgrade -y
 RUN  service php7.1-fpm start
