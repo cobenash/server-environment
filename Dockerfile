@@ -33,7 +33,7 @@ RUN  apt-get install php7.0-mbstring -y
 RUN  apt-get install php7.0-memcache
 RUN  apt-get update
 RUN  apt-get upgrade -y
-RUN  service php7.1-fpm start
+RUN  service php7.0-fpm start
 
 RUN apt-get install nano wget git vim openssh-server supervisor -y
 RUN  mkdir -p /usr/share/nginx/www
