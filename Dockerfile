@@ -5,7 +5,11 @@ MAINTAINER victor.yang@hellosanta.com.tw
 RUN apt-get update
 RUN apt-get upgrade -y
 
+<<<<<<< HEAD
 # nginx 1.10.2 php7.1
+=======
+# nginx 1.10.1 php7.1
+>>>>>>> d20b986f074849739042dcf9b606afe95ab25a17
 
 RUN  apt-get install software-properties-common python-software-properties  -y
 RUN  apt-get install python-software-properties
@@ -78,8 +82,6 @@ ADD  www.conf  /etc/php/7.1/fpm/pool.d/www.conf
 ADD  php.ini    /etc/php/7.1/fpm/php.ini
 ADD  default   /etc/nginx/sites-available/default
 ADD  my.cnf    /etc/mysql/my.cnf
-ADD  ./sh/1.sh  /root/sh/
-ADD  ./sh/bs.sh /bin/
 ADD  nginx.conf /etc/nginx/
 
 CMD ["/usr/bin/supervisord"]
