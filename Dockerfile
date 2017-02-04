@@ -5,12 +5,8 @@ MAINTAINER victor.yang@hellosanta.com.tw
 RUN apt-get update
 RUN apt-get upgrade -y
 
-<<<<<<< HEAD
-# nginx 1.10.2 php7.0
 
-=======
-# nginx 1.10.2 php7.1
->>>>>>> master
+# nginx 1.10.2 php7.0
 RUN  apt-get install software-properties-common python-software-properties  -y
 RUN  apt-get install python-software-properties
 RUN  add-apt-repository ppa:nginx/stable
