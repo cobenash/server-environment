@@ -73,7 +73,7 @@ WORKDIR /usr/share/nginx/www
 EXPOSE 80 22
 
 #啟動檔設定檔
-ADD  supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+ADD  supervisord.conf /etc/supervisor/supervisord.conf
 ADD  www.conf  /etc/php/7.1/fpm/pool.d/www.conf
 ADD  php.ini    /etc/php/7.1/fpm/php.ini
 ADD  default   /etc/nginx/sites-available/default
